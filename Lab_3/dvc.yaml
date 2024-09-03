@@ -1,9 +1,9 @@
 stages:
   prepare:
-    cmd: python data_processing.py
+    cmd: python basic_preprocessing.py
     deps:
       - data/weather_features.csv
-      - data_processing.py
+      - basic_preprocessing.py
     outs:
       - data/preprocessed_data.csv
     params: 

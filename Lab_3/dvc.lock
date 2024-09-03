@@ -1,0 +1,22 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python basic_preprocessing.py
+    deps:
+    - path: basic_preprocessing.py
+      hash: md5
+      md5: 084c954de1aace39e503615dc32ba9c8
+      size: 1085
+    - path: data/weather_features.csv
+      hash: md5
+      md5: 88e107d38ff66af919e781d339314cfe
+      size: 19918887
+    params:
+      params.yaml:
+        features.city: Valencia
+        features.data_path: data/weather_features.csv
+    outs:
+    - path: data/preprocessed_data.csv
+      hash: md5
+      md5: b4218435323221a3af1bd52006a601da
+      size: 133254
