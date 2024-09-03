@@ -3,3 +3,7 @@ numpy==1.26.4
 pandas==2.2.2
 scikit-learn==1.5.1
 hyperopt==0.2.7
+prophet==1.1.5
+matplotlib==3.9.2
+jupyterlab
+dvc
