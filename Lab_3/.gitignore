@@ -2,3 +2,4 @@
 /data/*.zip
 /fig/*.png
 /model/*.pkl
+/output/*.csv
