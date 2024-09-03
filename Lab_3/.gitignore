@@ -1,4 +1,4 @@
 /data/*.csv
 /data/*.zip
 /fig/*.png
-
+/model/*.pkl
