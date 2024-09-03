@@ -1,0 +1,61 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python basic_preprocessing.py
+    deps:
+    - path: basic_preprocessing.py
+      hash: md5
+      md5: 084c954de1aace39e503615dc32ba9c8
+      size: 1085
+    - path: data/weather_features.csv
+      hash: md5
+      md5: 88e107d38ff66af919e781d339314cfe
+      size: 19918887
+    params:
+      params.yaml:
+        features.city: Valencia
+        features.data_path: data/weather_features.csv
+    outs:
+    - path: data/preprocessed_data.csv
+      hash: md5
+      md5: b4218435323221a3af1bd52006a601da
+      size: 133254
+  modelling:
+    cmd: python basic_modelling.py
+    deps:
+    - path: basic_modelling.py
+      hash: md5
+      md5: e42918470e4f25d94e04dab4ee592228
+      size: 1875
+    - path: data/preprocessed_data.csv
+      hash: md5
+      md5: b4218435323221a3af1bd52006a601da
+      size: 133254
+    params:
+      params.yaml:
+        features.city: Valencia
+        features.cv_horizon: 365 days
+        features.cv_initial: 730 days
+        features.cv_period: 180 days
+        features.fourier_order: 10
+    outs:
+    - path: fig/forecast_plot.png
+      hash: md5
+      md5: e5b1a1795922e6e3a34e04b8cea84801
+      size: 577377
+    - path: model/prophet.pkl
+      hash: md5
+      md5: 910d3f14158db76afb4814b6e03ca213
+      size: 204599
+    - path: output/forecast_1y.csv
+      hash: md5
+      md5: 67b2d04fc3ce2523d6e1e494db24df4d
+      size: 561064
+    - path: output/forecast_cross_validation.csv
+      hash: md5
+      md5: f6f97eb66011e5e30669a9d317c362c2
+      size: 100909
+    - path: output/forecast_performance_metrics.csv
+      hash: md5
+      md5: f50bf1adcc467475b07814ad6d826d2d
+      size: 48033
