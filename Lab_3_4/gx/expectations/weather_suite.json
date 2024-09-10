@@ -1,0 +1,132 @@
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "weather_suite",
+  "expectations": [
+    {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "temp",
+        "max_value": 300,
+        "min_value": 250
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "temp",
+        "max_value": 300,
+        "min_value": 250
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "weather_main",
+        "regex": "[A-z]*"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "wind_deg",
+        "max_value": 360,
+        "min_value": 0,
+        "strict_max": false,
+        "strict_min": false
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "weather_description",
+        "mostly": 0.1
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_distinct_values_to_be_in_set",
+      "kwargs": {
+        "column": "weather_id",
+        "value_set": [
+          800,
+          801,
+          802,
+          803,
+          804,
+          500,
+          501,
+          502,
+          701,
+          522,
+          521,
+          503,
+          202,
+          200,
+          201,
+          211,
+          520,
+          300,
+          741,
+          301,
+          711,
+          302,
+          721,
+          310,
+          600,
+          616,
+          615,
+          601,
+          210,
+          602,
+          611,
+          311,
+          612,
+          620,
+          531,
+          731,
+          761,
+          771
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "humidity",
+        "max_value": 100,
+        "min_value": 0,
+        "strict_max": false,
+        "strict_min": false
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {
+        "column": "wind_speed"
+      },
+      "meta": {}
+    }
+  ],
+  "ge_cloud_id": null,
+  "meta": {
+    "citations": [
+      {
+        "batch_request": {
+          "data_asset_name": "weather_features.csv",
+          "data_connector_name": "default_inferred_data_connector_name",
+          "datasource_name": "lab4_datasource",
+          "limit": 1000
+        },
+        "citation_date": "2024-09-10T05:17:19.887392Z",
+        "comment": "Created suite added via CLI"
+      }
+    ],
+    "great_expectations_version": "0.18.19"
+  }
+}
